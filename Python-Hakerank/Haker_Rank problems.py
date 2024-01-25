@@ -20,3 +20,7 @@ def fib(n):
 
 re = fib(n)
 print(re)
+
+def is_prime(num):
+    if num > 1:
+        for i in range 
