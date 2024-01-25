@@ -23,4 +23,5 @@ print(re)
 
 def is_prime(num):
     if num > 1:
-        for i in range 
+        for i in range (num):
+            
