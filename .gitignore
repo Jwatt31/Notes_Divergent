@@ -1,3 +1,15 @@
-.keystorage.ipynb
+# local .terraform
+**/.terraform/*
+**/.keys.ipynb
+
+# ignore variales
+*.auto.tfvars
+
+*.tfoverride
+
+.envrc
+
+.terraformc
+terraform.rc
 
 *.tf
