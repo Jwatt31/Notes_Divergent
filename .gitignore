@@ -38,4 +38,4 @@ terraform.rc
 *.pub
 *.pem
 
-*.keys.ipynb
+*keys.ipynb
