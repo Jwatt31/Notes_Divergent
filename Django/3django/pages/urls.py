@@ -6,6 +6,6 @@ from .views import HomePageView, AboutPageView, ContactUsPageView
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
     path('about/', AboutPageView.as_view(), name='about'),
-    path('contactus/',  ContactUsPageView.as_view(), name='contactus'),
+    path('contactus/',  ContactUsPageView.as_view(), name='contactus'), # you have to add in the link like a network of roads
 
 ]
