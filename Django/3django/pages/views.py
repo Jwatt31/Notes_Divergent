@@ -7,5 +7,5 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 
-class AboutPageView(TemplateView): #remember you have to add in these when ad a page as well as adding them in the urls
-    template_name = 'about.html'
+class ContactUsPageView(TemplateView): #remember you have to add in these when ad a page as well as adding them in the urls
+    template_name = 'contactus.html'
