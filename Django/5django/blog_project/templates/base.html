@@ -1,0 +1,15 @@
+<!-- templates/base.html -->
+<html>
+    <head>
+        <h1>Django Blogs:</h1>
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'home' %}"></a>
+        </header>
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>
