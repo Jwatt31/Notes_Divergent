@@ -25,3 +25,4 @@ class Post(models.Model): # A Blog has a title, author, and body.
     # this will display 75 character of the text field in the 
     # Admin UI, you can store more characters in the database 
     # but in the Admin UI only the first 75 will show up.
+    
