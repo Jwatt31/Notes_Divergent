@@ -4,8 +4,11 @@
 {% block content %}
 <!-- Everything in between the block content will be put inside the block content tags of base.html -->
     {% for post in object_list %}
-        <div class="post_entry">
-            <h2><a href="">{{ post.title }}</a></h2>
+        <div class="post-entry">
+            <!-- Routing: use Django's Tagging Library to create a URL to by transferring from 
+                BlogListView's templates/home.html to each blog's 
+                BlogDetailView tempalates/blog_detail.html -->
+            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.body }}</p>
         </div>
     {% endfor %}
