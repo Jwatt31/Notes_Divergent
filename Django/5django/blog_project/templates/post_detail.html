@@ -1,0 +1,13 @@
+<!-- templates/post_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Everything in between the block content will be put inside the block content tags of base.html -->
+    {% for post in object_list %}
+        <div class="post_entry">
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.body }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
