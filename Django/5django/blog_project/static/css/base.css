@@ -34,7 +34,7 @@ h1 {
 
 .post-entry h2 a,
 .post-entry h2 a:visited {
-    color: blue;
+    color: rgb(13, 13, 41);
     text-decoration: none;
 }
 
@@ -58,15 +58,15 @@ body {
   
   @keyframes changeColor {
     0%, 100% {
-      background-color: red; /* Initial color */
+      background-color: aqua; /* Initial color */
     }
     25% {
-      background-color: blue; /* Change to blue after 5 seconds */
+      background-color: fuchsia; /* Change to blue after 5 seconds */
     }
     50% {
-      background-color: green; /* Change to green after 10 seconds */
+      background-color: salmon; /* Change to green after 10 seconds */
     }
     75% {
-      background-color: yellow; /* Change to yellow after 15 seconds */
+      background-color: skyblue; /* Change to yellow after 15 seconds */
     }
   }
