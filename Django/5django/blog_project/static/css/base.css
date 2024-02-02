@@ -1,0 +1,72 @@
+/* static/css/base.css */
+
+
+
+header {
+    border-bottom: 1px solid #999;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+h1 {
+    color: crimson;
+    text-decoration: none;
+}
+
+.nav-left {
+    margin-right: auto
+}
+
+.nav-right {
+    display: flex;
+    padding-top: 2rem;
+}
+
+/* <div class="post-entry"> */
+.post-entry {
+    margin-bottom: 2rem;
+}
+
+/* <h2><a href="">{{ post.title }}</a></h2> */
+.post-entry h2 {
+    margin: 0.5rem 0;
+}
+
+.post-entry h2 a,
+.post-entry h2 a:visited {
+    color: blue;
+    text-decoration: none;
+}
+
+/* <p>{{ post.body }}</p> */
+
+.post-entry p {
+    margin: 0;
+    font-weight: 400;
+}
+
+.post-entry h2 a:hover {
+    color: red;
+}
+
+
+body {
+    animation: changeColor 20s infinite; /* Change color every 20 seconds */
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+  }
+  
+  @keyframes changeColor {
+    0%, 100% {
+      background-color: red; /* Initial color */
+    }
+    25% {
+      background-color: blue; /* Change to blue after 5 seconds */
+    }
+    50% {
+      background-color: green; /* Change to green after 10 seconds */
+    }
+    75% {
+      background-color: yellow; /* Change to yellow after 15 seconds */
+    }
+  }
