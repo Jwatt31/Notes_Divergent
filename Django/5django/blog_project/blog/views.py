@@ -22,7 +22,7 @@ class BlogCreateView(CreateView):
 class BlogUpdateView(UpdateView):
     model = Post
     template_name = 'post_edit.html'
-    fields = ['title', 'body']
+    fields = ['title', 'body'] # this could be field like above '__all__' but is onnly looking and needs those 
 
 class BlogDeleteView(DeleteView):
     model = Post

@@ -1,7 +1,6 @@
 <!-- templates/base.html -->
 {% load static %}
 <html>
-
     <head>
         <link href="{% static 'css/base.css' %}" rel="stylesheet">
         <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet"> -->
@@ -12,8 +11,21 @@
     </head>
     <body>
         <header>
-            <a href="{% url 'home' %}"></a> | <a href="{% url 'post_new' %}">+ New Blog Post</a> | <a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a> | <a href="{% url 'post_delete' post.pk %}">+ Delete Blog Post</a>
+            <div class="nav-left">
+                <h1><a href="{% url 'home' %}">Django Blogs</a></h1>
+            </div>
+            <div class="nav-right">
+                <a href="{% url 'post_new' %}">+ New Blog Post</a>
+            </div>
         </header>
+        <!-- Check if User is Authenticated -->
+        {% if user.is_authenticated %}
+            <h3>Hello! {{ user.username }}</h3>
+            <p><a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <p>You are not Logged-In.</p>
+            <a href="{% url 'login' %}">Login-In</a>
+        {% endif %}
         <div>
             {% block content %}
             {% endblock content %}
