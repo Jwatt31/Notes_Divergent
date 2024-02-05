@@ -1,22 +1,13 @@
 # Blogs/view
-from django.views.generic import ListView, DetailView
-from .models import Post
+# blog/urls.py
+from django.urls import path
 
-# Create your views here to populate data from database
-# This is where the ORM of Django interacts with the database
+from .views import BlogListView, BlogDetailView, BlogCreatelView
+# By using the period .views we reference the current directory, which is our pages app containing both views.py and urls.py
 
-class BlogListView(ListView):
-    model = Post
-    template_name = 'home.html'
-
-# We are using Django's views.generic API by importing DetailView Class
-# Then we are makeing this DetailView Class our own with BlogDetailView
-class BlogDetailView(DetailView):
-    model = Post
-    template_name = 'post_detail.html'
-
-
-class BlogCreateView(CreateView):
-    model = Post
-    template_name = 'post_new.html'
-    fields ='__all__'
+urlpatterns = [
+    path('', BlogListView.as_view(), name='home'),
+    path('post/<int:pk>/', BlogDetailView.as_view(), name='post_detail'), 
+    # pk and id are interchangeable
+    path('post/new/', BlogCreatelView.as_view(), name='post_new'),
+]

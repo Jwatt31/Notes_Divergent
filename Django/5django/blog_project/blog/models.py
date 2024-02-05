@@ -1,5 +1,6 @@
 # blog/models.py
 from django.db import models
+from django.urls import reverse
 
 # Our table will be called "appname_modelname"
 class Post(models.Model): # A Blog has a title, author, and body. 
@@ -25,4 +26,13 @@ class Post(models.Model): # A Blog has a title, author, and body.
     # this will display 75 character of the text field in the 
     # Admin UI, you can store more characters in the database 
     # but in the Admin UI only the first 75 will show up.
+    
+
+    def get_absolute_url(self):
+# Reverse is a very handy utility function Django provides us to reference 
+# an object by its URL template name, in this case post_detail.
+        return reverse('post_detail', args=[str(self.id)])
+# path('post/<int:pk>/', BlogDetailView.as_view(), name='post_detail'),
+# pk and id are interchangeable
+# redirects to URL path: posts/pk or posts/id
     
