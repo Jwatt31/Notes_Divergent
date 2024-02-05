@@ -15,7 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home' # need this to tell reverse_ to retuen to the ho,e page with the changes made
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    'whitenoise.runserver_nostatic', #whitenoise
+    #'whitenoise.runserver_nostatic', #whitenoise what is this for
     "django.contrib.staticfiles",
 ]
 
