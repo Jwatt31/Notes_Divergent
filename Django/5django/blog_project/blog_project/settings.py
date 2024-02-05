@@ -130,3 +130,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Logout stuff
 LOGOUT_REDIRECT_URL = 'home' # need this to tell reverse_ to retuen to the ho,e page with the changes made
+LOGIN_REDIRECT_URL = 'home'
