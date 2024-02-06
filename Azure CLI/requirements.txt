@@ -123,3 +123,5 @@
 # y-py==0.5.9
 # ypy-websocket==0.8.2
 # zipp==3.15.0
+Django==4.1.1
+djangorestframework==3.10.3
