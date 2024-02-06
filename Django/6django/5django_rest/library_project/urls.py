@@ -19,6 +19,4 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('books.urls')), # Letting the project know of the book app
-    path('api/', include('api.urls')), # Letting the project know of our new API app
-
 ]
