@@ -30,14 +30,21 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    "books.apps.BooksConfig", # Books App
+INSTALLED_APPS = [ # Order of the apps is very important
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # 3rd Party Apps
+    # REST APP
+    "rest_framework",
+
+    # Local App
+    "books.apps.BooksConfig", # Books App
+    "api.apps.ApiConfig", # API App
 ]
 
 MIDDLEWARE = [
