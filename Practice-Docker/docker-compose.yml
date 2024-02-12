@@ -1,0 +1,17 @@
+version: '3.7' #Version of Docker-Compose
+
+services: # Specify Containers we want to have running within our Docker host
+# it’s possible to have multiple services running, but for now we just have one for web.
+  web:
+    # how to build the container by saying "Look in the current directory" with  '.' for the Dockerfile
+    build: . 
+    
+    # Then within the container run the command to start up the local server.
+    command: python /usr/src/app/manage.py runserver 127.0.0.0:8000
+
+    # The volumes 33 mount automatically syncs the Docker filesystem with our local computer’s filesystem. 
+    # This means that we don’t have to rebuild the image each time we change a single file!
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 8000:8000
