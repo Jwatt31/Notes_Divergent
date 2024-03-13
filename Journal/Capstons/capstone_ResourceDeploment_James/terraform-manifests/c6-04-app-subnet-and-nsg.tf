@@ -1,7 +1,7 @@
 # Resource-1: Create AppTier Subnet
 resource "azurerm_subnet" "appsubnet" {
   name                 = "${azurerm_virtual_network.vnet.name}-${var.app_subnet_name}"
-  resource_group_name  = azurerm_resource_group.rg.name
+  resource_group_name  = WattTest_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = var.app_subnet_address  
 }
@@ -9,8 +9,8 @@ resource "azurerm_subnet" "appsubnet" {
 # Resource-2: Create Network Security Group (NSG)
 resource "azurerm_network_security_group" "app_subnet_nsg" {
   name                = "${azurerm_subnet.appsubnet.name}-nsg"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = WattTest_resource_group.rg.location
+  resource_group_name = WattTest_resource_group.rg.name
 }
 
 # Resource-3: Associate NSG and Subnet
@@ -42,7 +42,7 @@ resource "azurerm_network_security_rule" "app_nsg_rule_inbound" {
   destination_port_range      = each.value 
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
-  resource_group_name         = azurerm_resource_group.rg.name
+  resource_group_name         = watttest_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.app_subnet_nsg.name
 }
 

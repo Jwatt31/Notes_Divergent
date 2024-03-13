@@ -32,6 +32,6 @@ resource "azurerm_network_security_rule" "web_vmnic_nsg_rule_inbound" {
   destination_port_range      = each.value 
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
-  resource_group_name         = azurerm_resource_group.rg.name
+  resource_group_name         = watttest_resource_group.rg.name
   network_security_group_name = azurerm_network_security_group.web_vmnic_nsg.name
 }
